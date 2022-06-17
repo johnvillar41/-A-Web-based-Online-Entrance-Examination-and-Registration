@@ -7,6 +7,8 @@ import { NavComponent } from './nav/nav.component';
 import { ShowcaseComponent } from './showcase/showcase.component';
 import { ExaminationTypesComponent } from './examination-types/examination-types.component';
 import { FundamentalsComponent } from './fundamentals/fundamentals.component';
+import { FaqComponent } from './faq/faq.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { FundamentalsComponent } from './fundamentals/fundamentals.component';
     NavComponent,
     ShowcaseComponent,
     ExaminationTypesComponent,
-    FundamentalsComponent
+    FundamentalsComponent,
+    FaqComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

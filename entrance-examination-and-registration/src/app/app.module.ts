@@ -9,6 +9,8 @@ import { ExaminationTypesComponent } from './examination-types/examination-types
 import { FundamentalsComponent } from './fundamentals/fundamentals.component';
 import { FaqComponent } from './faq/faq.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FooterComponent } from './footer/footer.component';
     ExaminationTypesComponent,
     FundamentalsComponent,
     FaqComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

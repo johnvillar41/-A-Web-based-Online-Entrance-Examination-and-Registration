@@ -12,7 +12,7 @@ export class DashboardCoursesComponent implements OnInit {
   constructor(private courseService: DashboardCoursesService) { }
 
   ngOnInit(): void {
-    this.courses = this.courseService.mockCourses;
+    this.courses = this.courseService.getCourses();
   }
 
 }

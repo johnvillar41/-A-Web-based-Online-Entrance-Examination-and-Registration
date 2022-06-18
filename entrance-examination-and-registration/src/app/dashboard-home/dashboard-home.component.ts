@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AnnouncementModel } from 'src/models/announcementModel';
+import { DashboardService } from 'src/services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard-home',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-home.component.css']
 })
 export class DashboardHomeComponent implements OnInit {
-
-  constructor() { }
+  announcements: Array<AnnouncementModel> = {} as Array<AnnouncementModel>;
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit(): void {
+    this.announcements = this.dashboardService.getAnnouncements();
   }
 
 }

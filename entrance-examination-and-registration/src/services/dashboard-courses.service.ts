@@ -5,13 +5,13 @@ import { CourseModel } from 'src/models/courseModel';
   providedIn: 'root'
 })
 export class DashboardCoursesService {
-  mockCourses: Array<CourseModel> = {} as Array<CourseModel>;
+
   constructor() {
-    this.onInitializeCourses();
+
   }
 
-  onInitializeCourses(): void {
-    this.mockCourses = [
+  getCourses(): Array<CourseModel> {
+    return [
       {
         courseCode: 'cs106',
         courseName: 'Automata and Language Theory',

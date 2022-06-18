@@ -26,22 +26,36 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <h1 class="fw-bold">Mission Vission</h1>
-    <p class="text-lead">Mission
-      To provide the learning environment that would transform our students into globally competitive professionals;
-      To produce social wealth from the generation of new knowledge;
-      To contribute to the solution of industry’s and society’s problems by the expert application of knowledge.
 
-      Vision
-      Malayan Colleges Laguna shall be a global steeple of excellence in professional education and research.
+  <h1 class="fw-bold">Mission Vission</h1>
+  <p class="text-lead">Mission
+    To provide the learning environment that would transform our students into globally competitive professionals;
+    To produce social wealth from the generation of new knowledge;
+    To contribute to the solution of industry’s and society’s problems by the expert application of knowledge.
 
-
-      Core Values
-      Excellence, Loyalty, Teamwork, Discipline, and Urgency
+    Vision
+    Malayan Colleges Laguna shall be a global steeple of excellence in professional education and research.
 
 
-      Motto
-      Excellence and Virtue</p>
+    Core Values
+    Excellence, Loyalty, Teamwork, Discipline, and Urgency
+
+
+    Motto
+    Excellence and Virtue</p>
+
+
+  <h1 class="fw-bold">Announcements</h1>
+  <div class="list-group">
+    <div *ngFor="let announcement of announcements">
+      <a class="list-group-item list-group-item-action" aria-current="true">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{announcement.announcementTitle}}</h5>
+          <small class="text-muted">{{announcement.date}}</small>
+        </div>
+        <p class="mb-1">{{announcement.announcementDescription}}</p>
+        <small class="text-muted">{{announcement.author}}</small>
+      </a>
+    </div>
   </div>
 </div>

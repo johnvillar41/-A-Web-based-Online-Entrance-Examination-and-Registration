@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/services/auth-service.service';
 import { LoginModel } from '../models/loginModel';
 
 @Component({
@@ -12,7 +14,9 @@ export class LoginComponent implements OnInit {
   message: string = '';
   hasError: boolean = false;
   hasSuccess: boolean = false;
-  constructor() { }
+
+  constructor(
+    private loginService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -25,11 +29,13 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    if (this.loginData.username === 'johny' && this.loginData.password === 'johny') {
-      this.message = 'Successfully Logged in!';
-      this.hasError = false;
-      this.hasSuccess = true;
+    let isLoginSuccess = this.loginService.login(this.loginData.username, this.loginData.password);
+    if(!isLoginSuccess) {
+      this.message = "Login Unsuccessfull! User not found!";
+      this.hasError = true;
+      this.hasSuccess = false;
     }
+
   }
 
 }

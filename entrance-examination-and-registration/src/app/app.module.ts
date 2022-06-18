@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     SignUpComponent,
     LoginComponent,
+    DashboardComponent,
 
   ],
   imports: [

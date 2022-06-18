@@ -10,7 +10,7 @@ export class AuthService {
     private router: Router
   ) { }
 
-  login(username: string, password: string): void {
+  login(username: string, password: string): boolean {
     //Fake login
     if (username == 'johny' && password == 'johny') {
       this.router.navigate(['/dashboard/home']);
@@ -18,5 +18,6 @@ export class AuthService {
     } else {
       this.isLoggedIn = false;
     }
+    return this.isLoggedIn;
   }
 }

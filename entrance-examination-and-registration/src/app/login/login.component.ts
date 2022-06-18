@@ -28,7 +28,13 @@ export class LoginComponent implements OnInit {
       this.hasSuccess = false;
       return;
     }
-    this.loginService.login(this.loginData.username, this.loginData.password);
+    let loginResult = this.loginService.login(this.loginData.username, this.loginData.password);
+    if(!loginResult) {
+      this.message = "Login Credentials not found!";
+      this.hasError = true;
+      this.hasSuccess = false;
+      return;
+    }
   }
 
 }

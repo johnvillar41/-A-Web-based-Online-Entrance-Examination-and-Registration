@@ -1,1 +1,14 @@
-<h1>COURSES</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg" *ngFor="let course of courses">
+      <div class="card">
+        <img src="../../assets/images/showcase.svg" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{course.courseCode}}</h5>
+          <p class="card-text">{{course.courseName}}</p>
+          <a href="#" class="btn btn-primary">{{course.instructor}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

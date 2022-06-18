@@ -1,0 +1,46 @@
+<div class="container position-absolute top-50 start-50 translate-middle">
+  <div class="card shadow-lg">
+    <div class="row bg-dark align-items-center justify-content-between">
+      <div class="col-lg-4 text-light ">
+        <img src="../../assets/images/showcase.svg" class="img-fluid" />
+      </div>
+      <div class="col-lg-8 bg-light text-dark">
+
+        <div class="p-5">
+          <div [ngClass]="['alert', 'alert-danger']" *ngIf="isOn" role="alert">
+            {{errorMessage}}
+          </div>
+          <h1 class="fw-bold mb-4">Login</h1>
+          <form #form="ngForm" (ngSubmit)="onLogin(form)">
+
+            <div class="col-lg">
+              <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" ngModel #username="ngModel" required class="form-control">
+              </div>
+            </div>
+            <div class="col-lg">
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" ngModel #password="ngModel" required class="form-control">
+              </div>
+            </div>
+
+            <button class="btn btn-dark mt-5">Login</button>
+            <a class="btn btn-secondary mt-5" routerLink="/sign-up">Register</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast align-items-center text-white bg-primary border-0" id="toastSuccess" role="alert"
+  aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+      aria-label="Close"></button>
+  </div>
+</div>

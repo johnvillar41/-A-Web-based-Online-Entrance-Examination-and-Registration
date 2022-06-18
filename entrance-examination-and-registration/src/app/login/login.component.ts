@@ -28,14 +28,7 @@ export class LoginComponent implements OnInit {
       this.hasSuccess = false;
       return;
     }
-
-    let isLoginSuccess = this.loginService.login(this.loginData.username, this.loginData.password);
-    if(!isLoginSuccess) {
-      this.message = "Login Unsuccessfull! User not found!";
-      this.hasError = true;
-      this.hasSuccess = false;
-    }
-
+    this.loginService.login(this.loginData.username, this.loginData.password);
   }
 
 }

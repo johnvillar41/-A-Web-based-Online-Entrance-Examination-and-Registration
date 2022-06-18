@@ -15,6 +15,8 @@ import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { AuthService } from 'src/services/auth-service.service';
+import { AuthGuard } from 'src/auth.guard';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,10 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     BrowserModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

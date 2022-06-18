@@ -5,17 +5,18 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-
+  isLoggedIn: boolean = false;
   constructor(
     private router: Router
   ) { }
 
-  login(username: string, password: string): boolean {
+  login(username: string, password: string): void {
+    //Fake login
     if (username == 'johny' && password == 'johny') {
       this.router.navigate(['/dashboard']);
-      return true;
+      this.isLoggedIn = true;
     } else {
-      return false;
+      this.isLoggedIn = false;
     }
   }
 }

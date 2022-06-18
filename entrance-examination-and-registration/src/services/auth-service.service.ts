@@ -13,7 +13,7 @@ export class AuthService {
   login(username: string, password: string): void {
     //Fake login
     if (username == 'johny' && password == 'johny') {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard/home']);
       this.isLoggedIn = true;
     } else {
       this.isLoggedIn = false;

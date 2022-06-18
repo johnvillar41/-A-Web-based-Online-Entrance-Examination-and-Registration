@@ -7,22 +7,25 @@
       <div class="col-lg-8 bg-light text-dark">
 
         <div class="p-5">
-          <div [ngClass]="['alert', 'alert-danger']" *ngIf="isOn" role="alert">
-            {{errorMessage}}
+          <div [ngClass]="['alert', 'alert-danger']" *ngIf="hasError" role="alert">
+            {{message}}
+          </div>
+          <div [ngClass]="['alert', 'alert-success']" *ngIf="hasSuccess" role="alert">
+            {{message}}
           </div>
           <h1 class="fw-bold mb-4">Login</h1>
-          <form #form="ngForm" (ngSubmit)="onLogin(form)">
+          <form (ngSubmit)="onLogin()">
 
             <div class="col-lg">
               <div class="form-group">
                 <label>Username</label>
-                <input type="text" name="username" ngModel #username="ngModel" required class="form-control">
+                <input type="text" name="username" [(ngModel)]='loginData.username' required class="form-control">
               </div>
             </div>
             <div class="col-lg">
               <div class="form-group">
                 <label>Password</label>
-                <input type="password" name="password" ngModel #password="ngModel" required class="form-control">
+                <input type="password" name="password" [(ngModel)]='loginData.password' required class="form-control">
               </div>
             </div>
 

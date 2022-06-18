@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { LoginModel } from '../models/loginModel';
 
 @Component({
   selector: 'app-login',
@@ -7,34 +8,28 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  errorMessage: string = '';
-  isOn: boolean = false;
-  isFormValid: boolean = false;
-  isSuccess: boolean = false;
+  loginData: LoginModel = {} as LoginModel;
+  message: string = '';
+  hasError: boolean = false;
+  hasSuccess: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onLogin(form: NgForm): void {
-    if (form.value.username.length == 0 || form.value.password.length == 0) {
-      this.errorMessage = "Please fill up login form!";
-      this.isOn = true;
+  onLogin(): void {
+    if (this.loginData.username === undefined || this.loginData.password === undefined) {
+      this.message = "Please fill up login form!";
+      this.hasError = true;
+      this.hasSuccess = false;
       return;
-    } else {
-      this.errorMessage = "";
-      this.isOn = false;
-      this.isFormValid = true;
     }
 
-    if (this.isFormValid) {
-      //TODO : Login
-      //FAKE LOGIN MODULE
-      if (form.value.username == "johny" && form.value.password == "johny") {
-       
-      }
+    if (this.loginData.username === 'johny' && this.loginData.password === 'johny') {
+      this.message = 'Successfully Logged in!';
+      this.hasError = false;
+      this.hasSuccess = true;
     }
-
   }
 
 }

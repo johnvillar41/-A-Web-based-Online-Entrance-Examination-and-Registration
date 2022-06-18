@@ -19,29 +19,25 @@ export class SignUpComponent implements OnInit {
   onRegister(): void {
 
     if (this.signUpData.firstName === undefined ||
-        this.signUpData.lastName === undefined ||
-        this.signUpData.phoneNumber === undefined ||
-        this.signUpData.email === undefined ||
-        this.signUpData.password === undefined ||
-        this.signUpData.confirmPassword === undefined) {
+      this.signUpData.lastName === undefined ||
+      this.signUpData.phoneNumber === undefined ||
+      this.signUpData.email === undefined ||
+      this.signUpData.password === undefined ||
+      this.signUpData.confirmPassword === undefined) {
 
       this.isOn = true;
       this.errorMessage = "You left some forms untouched!";
       return;
-
-    } else {
-      this.isOn = false;
-      this.errorMessage = "";
     }
 
-    if (this.signUpData.password == this.signUpData.confirmPassword) {
-      this.isOn = false;
-      this.errorMessage = "";
-    } else {
+    if (this.signUpData.password != this.signUpData.confirmPassword) {
       this.isOn = true;
       this.errorMessage = "Passwords do not match!";
+      return;
     }
 
-  }
+    this.isOn = false;
+    this.errorMessage = '';
 
+  }
 }

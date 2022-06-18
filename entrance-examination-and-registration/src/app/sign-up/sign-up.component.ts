@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { SignUpModel } from '../models/signUpModel';
+import { SignUpModel } from '../../models/signUpModel';
 
 @Component({
   selector: 'app-sign-up',

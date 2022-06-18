@@ -26,6 +26,16 @@ export class DashboardCoursesService {
         courseCode: 'cs106',
         courseName: 'Automata and Language Theory',
         instructor: 'Dennis Martillano'
+      },
+      {
+        courseCode: 'cs106',
+        courseName: 'Automata and Language Theory',
+        instructor: 'Dennis Martillano'
+      },
+      {
+        courseCode: 'cs106',
+        courseName: 'Automata and Language Theory',
+        instructor: 'Dennis Martillano'
       }
     ]
   }

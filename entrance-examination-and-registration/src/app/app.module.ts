@@ -17,6 +17,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { AuthService } from 'src/services/auth-service.service';
 import { AuthGuard } from 'src/auth.guard';
+import { DashboardHomeComponent } from './dashboard-home/dashboard-home.component';
+import { DashboardCoursesComponent } from './dashboard-courses/dashboard-courses.component';
+import { DashboardTestsComponent } from './dashboard-tests/dashboard-tests.component';
+import { DashboardScoresComponent } from './dashboard-scores/dashboard-scores.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,10 @@ import { AuthGuard } from 'src/auth.guard';
     LoginComponent,
     DashboardComponent,
     SideNavComponent,
+    DashboardHomeComponent,
+    DashboardCoursesComponent,
+    DashboardTestsComponent,
+    DashboardScoresComponent,
 
   ],
   imports: [

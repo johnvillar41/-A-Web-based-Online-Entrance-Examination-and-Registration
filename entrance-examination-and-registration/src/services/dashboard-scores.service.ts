@@ -37,7 +37,17 @@ export class DashboardScoresService {
             moduleTitle: 'Quiz 1',
             moduleGrade : 100,
             submittedDate : new Date('2021-01-01')
-          }
+          },
+          {
+            moduleTitle: 'Quiz 2',
+            moduleGrade : 100,
+            submittedDate : new Date('2021-01-01')
+          },
+          {
+            moduleTitle: 'Quiz 3',
+            moduleGrade : 100,
+            submittedDate : new Date('2021-01-01')
+          },
         ]
       },
       {

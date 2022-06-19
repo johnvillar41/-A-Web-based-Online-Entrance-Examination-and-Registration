@@ -1,26 +1,28 @@
-<div class="card p-5 m-2 shadow rounded" *ngFor="let grade of courseGrades;let i = index">
-  <h5>{{grade.courseModel.courseCode}}</h5>
-  <div class="d-flex align-items-center">
-    <div class="flex-grow-1">
-      <h1>{{grade.courseModel.courseName}}</h1>
+<div class="container">
+  <div class="card p-5 m-2 shadow rounded" *ngFor="let grade of courseGrades;let i = index">
+    <h5>{{grade.courseModel.courseCode}}</h5>
+    <div class="d-flex align-items-center">
+      <div class="flex-grow-1">
+        <h1>{{grade.courseModel.courseName}}</h1>
+      </div>
+      <div class="flex-shrink-0">
+        <h1><span class="badge bg-warning text-dark">{{grade.grade}}</span></h1>
+      </div>
     </div>
-    <div class="flex-shrink-0">
-      <h1><span class="badge bg-warning text-dark">{{grade.grade}}</span></h1>
-    </div>
-  </div>
-  <hr />
-  <h5>Recent Grades</h5>
-  <div class="accordion" *ngFor="let recentGrade of grade.recentGrades;let j = index">
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed d-flex" type="button" data-bs-toggle="collapse"
-          [attr.href]="'#flush_' + i + j ">
-          <span class="flex-grow-1">{{recentGrade.moduleTitle}}</span>
-          <h5><span class="badge bg-warning text-dark flex-shrink-0">{{recentGrade.moduleGrade}}</span></h5>
-        </button>
-      </h2>
-      <div id="{{'flush_' + i + j}}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">{{recentGrade.submittedDate}}
+    <hr />
+    <h5>Recent Grades</h5>
+    <div class="accordion" *ngFor="let recentGrade of grade.recentGrades;let j = index">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed d-flex" type="button" data-bs-toggle="collapse"
+            [attr.href]="'#flush_' + i + j ">
+            <span class="flex-grow-1">{{recentGrade.moduleTitle}}</span>
+            <h5><span class="badge bg-warning text-dark flex-shrink-0">{{recentGrade.moduleGrade}}</span></h5>
+          </button>
+        </h2>
+        <div id="{{'flush_' + i + j}}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">{{recentGrade.submittedDate}}
+          </div>
         </div>
       </div>
     </div>

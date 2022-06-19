@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  isLoggedIn: boolean = false;
   constructor(
     private router: Router
   ) { }
@@ -14,10 +13,22 @@ export class AuthService {
     //Fake login
     if (username == 'johny' && password == 'johny') {
       this.router.navigate(['/dashboard/home']);
-      this.isLoggedIn = true;
+      localStorage.setItem('token', "HAHAHAHAHATDOG");
+      return true;
     } else {
-      this.isLoggedIn = false;
+      return false;
     }
-    return this.isLoggedIn;
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+  }
+
+  isAuthenticated(): boolean {
+    const token = localStorage.getItem('token');
+    if (token == null) {
+      return false;
+    }
+    return true;
   }
 }

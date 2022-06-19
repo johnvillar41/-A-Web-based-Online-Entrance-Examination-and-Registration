@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/services/auth-service.service';
 import { LoginModel } from '../../models/loginModel';
+import { NavComponent } from '../nav/nav.component';
 
 @Component({
   selector: 'app-login',
@@ -16,9 +17,11 @@ export class LoginComponent implements OnInit {
   hasSuccess: boolean = false;
 
   constructor(
-    private loginService: AuthService) { }
+    private loginService: AuthService,
+  ) { }
 
   ngOnInit(): void {
+
   }
 
   onLogin(): void {
@@ -29,7 +32,7 @@ export class LoginComponent implements OnInit {
       return;
     }
     let loginResult = this.loginService.login(this.loginData.username, this.loginData.password);
-    if(!loginResult) {
+    if (!loginResult) {
       this.message = "Login Credentials not found!";
       this.hasError = true;
       this.hasSuccess = false;

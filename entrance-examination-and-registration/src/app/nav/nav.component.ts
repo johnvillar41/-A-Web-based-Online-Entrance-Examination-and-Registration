@@ -17,7 +17,6 @@ export class NavComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.isLoggedIn = this.auth.isAuthenticated();
     this.sharedService.loginStatusMessage$.subscribe(status => {
       if(status === true) {
         this.isLoggedIn = true;
